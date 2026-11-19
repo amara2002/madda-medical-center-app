@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tanstackStart(),
-    nitro(), // Let Nitro auto-detect Vercel, do not hardcode preset
+    nitro(),
     viteReact(),
     tailwindcss()
   ],
