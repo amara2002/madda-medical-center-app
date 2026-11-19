@@ -1,8 +1,6 @@
-/// <reference types="vite/client" />
 import { createRootRoute, Outlet, Link } from '@tanstack/react-router'
 import { MaddaLayout } from '@/site/MaddaLayout'
 import { Toaster } from '@/components/ui/sonner'
-import appCss from '../index.css?inline'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -18,21 +16,18 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <>
-      <style dangerouslySetInnerHTML={{ __html: appCss }} />
-      <MaddaLayout>
-        <Outlet />
-        <Toaster position="top-center" richColors />
-      </MaddaLayout>
-    </>
+    <MaddaLayout>
+      <Outlet />
+      <Toaster position="top-center" richColors />
+    </MaddaLayout>
   )
 }
 
 function NotFoundPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 py-24 text-center">
+    <div className="mx-auto max-w-2xl px-5 py-20 text-center">
       <p className="eyebrow">404 — Page Not Found</p>
-      <h1 className="mt-3 font-serif text-4xl font-bold text-foreground">
+      <h1 className="mt-3 font-serif text-3xl font-bold text-foreground sm:text-4xl">
         This page doesn't exist
       </h1>
       <p className="mt-4 text-base text-muted-foreground">
